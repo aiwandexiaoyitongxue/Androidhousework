@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="130dp"
+        android:layout_y="4dp"
+        android:text="拨打电话"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/phoneNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="11dp"
+        android:layout_y="146dp"
+        android:hint="输入电话号码"
+        android:inputType="number"
+        tools:ignore="MissingConstraints" />
+<!--    <Button-->
+<!--        android:id="@+id/btn_call"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="拨打电话"-->
+<!--        android:onClick="makePhoneCall"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        tools:ignore="MissingConstraints" />-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="528dp"
+        android:layout_x="0dp"
+        android:layout_y="201dp"
+        tools:ignore="MissingConstraints">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/btn_call"/>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
