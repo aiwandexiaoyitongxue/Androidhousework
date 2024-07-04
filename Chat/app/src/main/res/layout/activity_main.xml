@@ -5,18 +5,134 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_image"
     tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/button_experience"
+    <!-- Guideline用来分隔头像和消息按钮 -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="立即体验"
-        android:textSize="36dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <!-- ImageButton 头像按钮 -->
+
+    <!-- Button 消息按钮 -->
+
+    <!-- 未读消息指示器 -->
+
+    <ImageButton
+        android:id="@+id/btn_userhead"
+        android:layout_width="85dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="User Head Image Button"
+        android:src="@drawable/background6"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.033" />
+
+
+    <!-- Guideline，用来对齐右侧元素 -->
+
+
+    <Button
+        android:id="@+id/btn_message"
+        android:layout_width="230dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:text="最新消息和备注"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
+
+    <TextView
+        android:id="@+id/unread_indicator"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/avatar_placeholder"
+        android:text="99+"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="26dp"
+        app:layout_constraintStart_toEndOf="@id/btn_message"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_message"
+        app:layout_constraintBottom_toBottomOf="@id/btn_message">
+    </TextView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+    <!-- Guideline，用于分割底部区域成四等分 -->
+    <LinearLayout
+        android:id="@+id/chat_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btn_chat"
+        app:layout_constraintEnd_toEndOf="@+id/btn_chat"
+        app:layout_constraintTop_toTopOf="@+id/btn_chat"
+        app:layout_constraintVertical_bias="1.0">
+
+        <!-- ImageView for avatar -->
+        <!-- TextView for unread message count -->
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.333" />
+
+    <Button
+        android:id="@+id/btn_chat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="聊天"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_bottom"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.333"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_contacts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="联系人"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/guideline_bottom"
+        app:layout_constraintWidth_percent="0.333"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_settings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="设置"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/guideline_bottom"
+        app:layout_constraintWidth_percent="0.333"
+        tools:ignore="MissingConstraints" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

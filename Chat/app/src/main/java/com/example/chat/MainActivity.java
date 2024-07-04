@@ -1,27 +1,52 @@
 package com.example.chat;
 
-import android.os.Bundle;
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import android.os.Bundle;
 import android.view.View;
-public class MainActivity extends AppCompatActivity {
+import android.widget.Button;
+import android.widget.ImageButton;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+    private Button btnMessages, btnContacts, btnChat, btnSettings;
+    private ImageButton btnUserhead;
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 找到 "立即体验" 按钮并设置点击事件
-        findViewById(R.id.button_experience).setOnClickListener(new View.OnClickListener() {
-
+        // Initialize buttons
+        btnContacts = findViewById(R.id.btn_contacts);
+        btnChat = findViewById(R.id.btn_chat);
+        btnSettings = findViewById(R.id.btn_settings);
+        btnUserhead=findViewById(R.id.btn_userhead);
+        btnUserhead.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-                // 创建一个意图启动 RegisterActivity
-                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(MainActivity.this,PersonalActivity.class));
+            }
+        });
+        btnContacts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ContactsActivity.class));
+            }
+        });
+
+        btnChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ChatActivity.class));
+            }
+        });
+
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
             }
         });
     }

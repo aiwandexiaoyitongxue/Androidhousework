@@ -13,16 +13,48 @@
         android:theme="@style/Theme.Chat"
         tools:targetApi="31">
         <activity
+            android:name=".PersonalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Contact.SearchContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Contact.UpdateContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Contact.DeleteContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Contact.AddContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ContactsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CoverPageActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
+
         </activity>
     </application>
 

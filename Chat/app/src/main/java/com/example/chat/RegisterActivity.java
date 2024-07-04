@@ -1,15 +1,15 @@
 package com.example.chat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 import android.widget.Button;
 import android.widget.EditText;
-import androidx.activity.EdgeToEdge;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.example.chat.database.DatabaseHelper;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -44,7 +44,9 @@ public class RegisterActivity extends AppCompatActivity {
                         long id = databaseHelper.addUser(username, password);
                         if (id > 0) {
                             Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                            // 可以跳转到登录界面或者其他操作
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                            finish(); // 关闭当前注册页面
                         } else {
                             Toast.makeText(RegisterActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
                         }
